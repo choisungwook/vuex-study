@@ -1,7 +1,10 @@
 <template>
   <v-container>
       <v-row>
-          <v-col>
+          <v-col xs6>
+              <AllUsers />
+          </v-col>
+          <v-col xs6>
               <AllUsers />
           </v-col>
       </v-row>
@@ -9,7 +12,6 @@
 </template>
 
 <script>
-// import AllUsers from '@/components/Users/AllUsers'
 import AllUsers from '../components/Users/Allusers'
 
 export default {
