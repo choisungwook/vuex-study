@@ -1,11 +1,11 @@
 <template>
   <v-container>
       <v-row>
-          <v-col xs6>
+          <v-col sm="2" lg="2">
               <AllUsers />
           </v-col>
-          <v-col xs6>
-              <AllUsers />
+          <v-col sm="10" lg="10">
+              <Signup />
           </v-col>
       </v-row>
   </v-container>
@@ -13,10 +13,12 @@
 
 <script>
 import AllUsers from '../components/Users/Allusers'
+import Signup from '../components/Users/Signup'
 
 export default {
     components: {
         AllUsers,
+        Signup,
     },
 }
 </script>
