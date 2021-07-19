@@ -36,13 +36,6 @@
         >
         Reset Form
         </v-btn>
-
-        <v-btn
-        color="warning"
-        @click="resetValidation"
-        >
-        Reset Validation
-        </v-btn>
     </v-form>
   </v-container>
 </template>
@@ -69,9 +62,6 @@
       },
       reset () {
         this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
       },
     },
   }
