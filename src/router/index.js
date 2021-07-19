@@ -5,12 +5,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/abcde',
     name: 'Home',
     component: () => import(/* webpackChunkName: "about" */ '../views/Users.vue')
   },
   {
-    path: '/Allusers',
+    path: '/abcde/Allusers',
     name: 'Allusers',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
