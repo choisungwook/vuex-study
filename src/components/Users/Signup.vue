@@ -95,17 +95,22 @@
 
     methods: {
     //   ...mapMutations(['addUsers']),
+      validate() {
+        return  this.$refs.form.validate()
+      },
       signup () {
-        let userObj = {
-          userId: this.userId,
-          password: this.password,
-          name: this.name,
-          address: this.address,
-          src: this.src
+        if(this.validate()){
+              let userObj = {
+              userId: this.userId,
+              password: this.password,
+              name: this.name,
+              address: this.address,
+              src: this.src
+            }
+            this.$store.commit('addUsers', userObj)
+            // this.addUsers(userObj);
+            this.reset()
         }
-        this.$store.commit('addUsers', userObj)
-        // this.addUsers(userObj);
-        this.reset()
       },
       reset () {
         this.$refs.form.reset()
