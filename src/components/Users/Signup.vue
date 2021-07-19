@@ -51,9 +51,9 @@
         :disabled="!valid"
         color="success"
         class="mr-4"
-        @click="validate"
+        @click="signup"
         >
-        Validate
+        회원가입
         </v-btn>
 
         <v-btn
@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
   export default {
     data: () => ({
       show: false,
@@ -92,8 +94,17 @@
     }),
 
     methods: {
-      validate () {
-        this.$refs.form.validate()
+      ...mapMutations(['addUsers']),
+      signup () {
+        let userObj = {
+          userId: this.userId,
+          password: this.password,
+          name: this.name,
+          address: this.address,
+          src: this.src
+        }
+        this.addUsers(userObj);
+        this.reset()
       },
       reset () {
         this.$refs.form.reset()
