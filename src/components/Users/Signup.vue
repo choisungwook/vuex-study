@@ -6,17 +6,43 @@
         lazy-validation
       >
         <v-text-field
+        v-model="id"
+        :counter="10"
+        :rules="nameRules"
+        label="아이디"
+        required
+        ></v-text-field>
+
+        <v-text-field
         v-model="name"
         :counter="10"
         :rules="nameRules"
-        label="Name"
+        label="이름"
+        required
+        ></v-text-field>
+
+        <v-text-field
+        v-model="password"
+        :counter="10"
+        :type="show ? 'text' : 'password'"
+        label="비밀번호"
+        :rules="passwordRules"
+        :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+        @click:append="show = !show"
         required
         ></v-text-field>
 
         <v-text-field
         v-model="email"
         :rules="emailRules"
-        label="E-mail"
+        label="이메일"
+        required
+        ></v-text-field>
+
+        <v-text-field
+        v-model="address"
+        :rules="nameRules"
+        label="주소"
         required
         ></v-text-field>
 
@@ -43,8 +69,12 @@
 <script>
   export default {
     data: () => ({
+      show: false,
       valid: true,
+      id: '',
       name: '',
+      password: '',
+      address: '',
       nameRules: [
         v => !!v || 'Name is required',
         v => (v && v.length <= 10) || 'Name must be less than 10 characters',
@@ -54,6 +84,10 @@
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
+      passwordRules: [
+          v => !!v || 'password is required',
+          v => (v && v.length > 1) || 'password must be greater than 2 characters'
+      ]
     }),
 
     methods: {
