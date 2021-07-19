@@ -1,5 +1,6 @@
 <template>
   <v-container>
+      <h1>회원가입</h1>
       <v-form
         ref="form"
         v-model="valid"

@@ -1,6 +1,6 @@
 <template>
-  <div class="allusers">
-      allusers page
+  <v-container>
+      <h1>회원목록</h1>
       <v-list>
         <v-list-item v-for="(user, index) in $store.state.allUsers" :key="user.index">
             <v-list-item-content>
@@ -9,7 +9,7 @@
             </v-list-item-content>
         </v-list-item>
       </v-list>
-  </div>
+  </v-container>
 </template>
 
 <script>
