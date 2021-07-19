@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+// import { mapMutations } from 'vuex'
 
   export default {
     data: () => ({
@@ -94,7 +94,7 @@ import { mapMutations } from 'vuex'
     }),
 
     methods: {
-      ...mapMutations(['addUsers']),
+    //   ...mapMutations(['addUsers']),
       signup () {
         let userObj = {
           userId: this.userId,
@@ -103,7 +103,8 @@ import { mapMutations } from 'vuex'
           address: this.address,
           src: this.src
         }
-        this.addUsers(userObj);
+        this.$store.commit('addUsers', userObj)
+        // this.addUsers(userObj);
         this.reset()
       },
       reset () {
